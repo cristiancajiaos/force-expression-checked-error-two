@@ -7,13 +7,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Layout } from './layout/layout';
 import { Foo } from './components/foo/foo';
 import { Bar } from './components/bar/bar';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { Baz } from './components/baz/baz';
 
 @NgModule({
   declarations: [
     App,
     Layout,
     Foo,
-    Bar
+    Bar,
+    Baz
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { Bar } from './components/bar/bar';
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [App]
 })

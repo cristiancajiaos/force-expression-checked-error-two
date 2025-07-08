@@ -1,1 +1,12 @@
-<p>foo works!</p>
+<div class="row">
+  <div class="col-4">
+    <p><strong>Post</strong>: {{ post | json }}</p>
+  </div>
+  <div class="col-4">
+    <app-bar [post]="post" (getPost)="newPost($event)">
+    </app-bar>
+  </div>
+  <div class="col-4">
+    <app-baz [post]="post"></app-baz>
+  </div>
+</div>

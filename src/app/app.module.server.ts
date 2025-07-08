@@ -8,8 +8,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 @NgModule({
   imports: [AppModule],
   providers: [
-    provideServerRendering(withRoutes(serverRoutes)),
-    provideHttpClient(withFetch())
+    provideServerRendering(withRoutes(serverRoutes))
   ],
   bootstrap: [App],
 })
